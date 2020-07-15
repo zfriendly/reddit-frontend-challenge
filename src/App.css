@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -35,4 +30,59 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.nav {
+  color: #ff5700;
+  margin: 5% auto;
+  text-align: center;
+  font-weight: 800;
+}
+.search {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 100px;
+}
+
+.search_table {
+  margin-bottom: 50px;
+}
+
+#button {
+  background-color: #ff5700;
+  color: white;
+  margin: 5px 0;
+  padding: 2px;
+}
+
+#button:hover {
+  background-color: #ff4500;
+}
+
+.table {
+  width: 80%;
+  margin: 0 auto;
+  color: #ff8b60;
+}
+.table_image {
+  width: 10%;
+}
+
+.table_subreddit {
+  width: 20%;
+}
+
+.table_description {
+  width: 60%;
+}
+
+.table_url {
+  width: 10%;
+}
+
+.launch_icon {
+  align-items: center;
+  color: #ff8b60;
 }

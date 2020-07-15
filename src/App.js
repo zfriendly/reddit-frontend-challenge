@@ -55,8 +55,10 @@ class App extends Component {
     return (
       <div>
         <Nav />
-        <Search onClick={this.subredditSearch} onChange={this.updateSearch} />
-        <Results results={this.state.results} onClick={this.displayPosts} />
+        <div class="search">
+          <Search onClick={this.subredditSearch} onChange={this.updateSearch} />
+          <Results results={this.state.results} onClick={this.displayPosts} />
+        </div>
       </div>
     );
   }

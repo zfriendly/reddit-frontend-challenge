@@ -9,17 +9,28 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Link from "@material-ui/core/Link";
 import Avatar from "@material-ui/core/Avatar";
+import "./App.css";
+import LaunchIcon from "@material-ui/icons/Launch";
+import Accordion from "@material-ui/core/Accordion";
 
 const Results = ({ results, onClick }) => (
-  <TableContainer component={Paper}>
+  <TableContainer component={Paper} class="table">
     <Table>
       <TableHead>
         <TableRow>
-          <TableCell>Image</TableCell>
-          <TableCell align="right">Subreddit</TableCell>
-          <TableCell align="right">Description</TableCell>
-          <TableCell align="right">URL</TableCell>
-          <TableCell align="right"></TableCell>
+          <TableCell align="left" class="table_image">
+            Image
+          </TableCell>
+          <TableCell class="table_subreddit" align="right">
+            Subreddit
+          </TableCell>
+          <TableCell class="table_description" align="right">
+            Description
+          </TableCell>
+          <TableCell class="table_url" align="right">
+            View Subreddit
+          </TableCell>
+          <TableCell class="table_posts" align="right"></TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -28,20 +39,18 @@ const Results = ({ results, onClick }) => (
             <TableCell component="th" scope="row">
               <Avatar alt={row.title} src={row.image} />
             </TableCell>
-            <TableCell align="right">{row.title}</TableCell>
-            <TableCell align="right">{row.description}</TableCell>
-            <TableCell align="right">
+
+            <TableCell align="center">
+              <Link href="#" onClick={(e) => onClick(row.url)}>
+                {row.title}
+              </Link>
+            </TableCell>
+            <TableCell align="left">{row.description}</TableCell>
+            <TableCell align="center">
               <Link
-                children="Visit Subreddit"
+                children={<LaunchIcon fontSize="large"></LaunchIcon>}
                 href={`https://www.reddit.com${row.url}`}
                 target="_blank"
-              ></Link>
-            </TableCell>
-            <TableCell>
-              <Link
-                children="Recent Posts"
-                href="#"
-                onClick={(e) => onClick(row.url)}
               ></Link>
             </TableCell>
           </TableRow>
